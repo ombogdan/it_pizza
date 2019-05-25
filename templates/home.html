@@ -3,11 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-   {% load staticfiles %}
+    {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'master.css' %}"/>
+    <link rel="stylesheet" href="{% static 'menu.css' %}"/>
+    <link rel="stylesheet" href="{% static 'animat.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-це домашня сторінка на якій все буде контакти про нас
-{% url 'log-out' %} це засуваєш в кнопку або ссилку коли нажимаєш воно виходе
+<header class="header">
+    <div class="wrap-menu">
+        <div class="button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <!-- navbar menu -->
+        <div class='menu'>
+            <nav>
+                <ul>
+                    <li class="">
+                        <img src="../static/icon/logo.png" class="logo" width="170px" height="70px"
+                             style="margin-left:35%" alt="">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="wrap-content">
+        <ul class="flex-nav">
+            <li>
+                <a href="#">Home
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">About
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">Service
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">Contact
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="main-section">
+    <div class="container">
+        <div class="hold-content">
+
+            <div class="name-com">
+                <h2 class="name_r">it pizza</h2>
+                <div class="new-icon">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--це домашня сторінка на якій все буде контакти про нас-->
+<!--{% url 'log-out' %} це засуваєш в кнопку або ссилку коли нажимаєш воно виходе-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type="text/javascript">
+    $(function () {
+        /*--------- show and hide the menu  ---*/
+        $('.button').on("click", function () {
+            if ($('body').hasClass('nav_is_visible') == true) {
+                $('body').removeClass('nav_is_visible');
+                $('.button').removeClass('close');
+            } else {
+                $('body').addClass('nav_is_visible');
+                $('.button').addClass('close');
+            }
+        });
+
+        $('body').addClass('home_is_visible');
+
+
+        function removeClasses() {
+            $(".menu ul li").each(function () {
+                var custom_class = $(this).find('a').data('class');
+                $('body').removeClass(custom_class);
+            });
+        }
+
+        $('.menu a').on('click', function (e) {
+            e.preventDefault();
+            removeClasses();
+            var custom_class = $(this).data('class');
+            $('body').addClass(custom_class);
+        });
+    });
+</script>
 </body>
 </html>
