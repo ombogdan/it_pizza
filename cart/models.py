@@ -2,7 +2,7 @@ from django.db import models
 from menu.models import *
 # Create your models here.
 class CartItem(models.Model):
-    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    pizza = models.ForeignKey(Pizzas, on_delete=models.CASCADE)
     qty = models.PositiveIntegerField(default=1)
     item_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.0)
 

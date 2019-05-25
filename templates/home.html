@@ -32,7 +32,7 @@
     <div class="wrap-content">
         <ul class="flex-nav">
             <li>
-                <a href="#">Home
+                <a href="#" class="bg-a">Home
                     <span></span>
                     <span></span>
                     <span></span>
@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">About
+                <a href="{%url 'pizzas'%}">Menu
                     <span></span>
                     <span></span>
                     <span></span>
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Service
+                <a href="#">Deserts
                     <span></span>
                     <span></span>
                     <span></span>
@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Contact
+                <a href="#">Drinks
                     <span></span>
                     <span></span>
                     <span></span>
@@ -69,12 +69,19 @@
 <section class="main-section">
     <div class="container">
         <div class="hold-content">
-
             <div class="name-com">
-                <h2 class="name_r">it pizza</h2>
-                <div class="new-icon">
-                    <img src="" alt="">
-                </div>
+                <h2 class="name_r">it <span class="bg-pizza">pizza </span>🍕</h2>
+            </div>
+            <div class="wrap-text">
+                <p class="about">Піцерія «IT PIZZA» - це стильне молодіжне, сімейне заклад Черкас, вже давно
+                    зарекомендувало себе серед жителів міста як місце з відмінною атмосферою, в якому можна не тільки
+                    замовити піцу і покуштувати цікаві страви авторської італійської кухні, а й чудово відпочити.</p>
+            </div>
+            <div class="wrap-btn">
+                <a target="_blank" href="https://web.telegram.org/#/im?p=@pizza_menu_bot" id="order" class="order">Замовляй
+                    швидше
+                    <img src="http://panda-test.dev.visacrm.com/img/telega.png" id="telega" class="telega" alt="">
+                </a>
             </div>
         </div>
     </div>
@@ -115,5 +122,6 @@
         });
     });
 </script>
+
 </body>
 </html>

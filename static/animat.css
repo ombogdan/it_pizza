@@ -16,11 +16,16 @@ ul li a {
 	transition: .5s;
 	box-sizing: border-box;
 }
+
+.bg-a {
+   background-color: #27d34a;
+}
+
 ul li a span {
 	position: absolute;
 	width: 25%;
 	height: 100%;
-	background-color: #27d34a;
+	background-color: #27d34a !important;
 	z-index: -1;
 	transform-origin: top;
 	transform: scaleY(0);
@@ -30,6 +35,7 @@ ul li a:hover {
 	color: #fff;
 	text-decoration: none;
 }
+
 ul li a:hover span {
 	transform-origin: bottom;
 	transform: scaleY(1);

@@ -3,17 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizzas</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'pizza.css' %}"/>
+    <link rel="stylesheet" href="{% static 'animat.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style_ingridients.css' %}"/>
 </head>
 <body>
-<form method="POST">
-{% for pizza in pizzas %}
-    <p>{{ pizza.title }}</p>
-    {{ pizza.description }}
-    {{ pizza.mass }}
-    {{ pizza.price }}
-    <img class="rounded" src="{{ MEDIA_URL }}{{ pizza.photo }}" width="50" height="50">
-    <button type="submit">Додати в корзину</button>
-{% endfor %}
-</form>
+<header class="header container">
+    <div class="wrap-content">
+        <ul class="flex-nav">
+            <li>
+                <a href="{%url 'home'%}" class="">Home
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a class="bg-a" href="#">Menu
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">Deserts
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">Drinks
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="main-section">
+    <div class="container flex-cont">
+        <div class="wrap-h2">
+            <h2>Наші <span class="bg-span">піцци</span></h2>
+        </div>
+        <div class="wrap-items">
+
+
+            <form method="POST" class="form-flex">
+                {% for pizza in pizzas %}
+                <div class="first-item item">
+
+                    <div class="photobox photobox_type10">
+                        <div class="photobox__previewbox">
+                            <img src="{{ pizza.photo.url}}" width="300px" height="230px">
+                            <span class="photobox__label">
+                                    <form method="POST">
+
+                                         <p class="p-test">{{ pizza.description }} <br><p>
+
+                                    </form>
+
+                                    </span>
+                        </div>
+                    </div>
+                    <p class="name-pizza mar"><span class="bg-span">Назва:</span> {{ pizza.title }}</p>
+                    <!--                    <p class="name-pizza mar"><span class="bg-span">Інгрідієнти:</span> {{ pizza.description }}</p>-->
+                    <p class="massa mar"><span class="bg-span">Маса :</span> {{ pizza.mass }}</p>
+                    <p class="price mar"><span class="bg-span">Ціна:</span> {{ pizza.price }}</p>
+                    <button type="submit" class="mar basket-btn">Додати в корзину</button>
+                </div>
+                {% endfor %}
+            </form>
+
+            <div class="second-item item">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>

@@ -1,0 +1,88 @@
+/*
+P.S: if you like my content maybe you will become a donator and donate some money? That helps me to create new awesome materials. https://www.paypal.me/melnik909
+*/
+
+/*
+* The function calc is working wrong in case calculations in the Firefox
+*/
+
+.photobox {
+    display: flex;
+}
+
+.photobox__previewbox {
+    position: relative;
+    overflow: hidden;
+}
+
+.photobox__preview {
+    display: block;
+    width: 100%;
+}
+
+.photobox__previewbox:before {
+    content: "";
+}
+
+.photobox_type10 .photobox__previewbox:before {
+    width: 0;
+    height: 0;
+    padding: 25%;
+
+    background-color: var(--photoboxOverlay, rgba(0, 0, 0, .8));
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transition: transform calc(var(--photoboxAnimationDuration, .8s) / 2) ease;
+    will-change: transform;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.photobox_type10:hover .photobox__previewbox:before {
+    transform: translate(-50%, -50%) scale(4);
+    transition-duration: var(--photoboxAnimationDuration, .8s);
+}
+
+.photobox_type10 .photobox__label {
+    width: 95%;
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity calc(var(--photoboxAnimationDuration, .8s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9), transform calc(var(--photoboxAnimationDuration, .8s) / 4) cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: opacity, transform;
+    font-size: 1vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    z-index: 3;
+}
+
+
+.photobox_type10:hover .photobox__label {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition-duration: calc(var(--photoboxAnimationDuration, .8s) / 2);
+    transition-delay: calc(var(--photoboxAnimationDuration, .8s) / 4);
+}
+
+/* type 11 */
+
+
+.photobox {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 100%;
+        --photoboxOverlay: rgba(16, 14, 23, 0.7);
+    /*--photoboxAnimationDuration: .5s;*/
+}
+
+
+.page__demo {
+    flex-grow: 1;
+}
+
