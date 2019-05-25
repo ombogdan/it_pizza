@@ -3,16 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Deserts</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'animat.css' %}"/>
+    <link rel="stylesheet" href="{% static 'desert.css' %}"/>
+
 </head>
 <body>
-<form method="POST">
-{% for desert in deserts %}
-    <p>{{ desert.title }}</p>
-    {{ desert.mass }}
-    {{ desert.price }}
-    <img class="rounded" src="{{ MEDIA_URL }}{{ desert.photo }}" width="50" height="50">
-    <button type="submit">Додати в корзину</button>
-{% endfor %}
-</form>
+<header class="header container">
+    <div class="wrap-content">
+        <ul class="flex-nav">
+            <li>
+                <a href="{%url 'home'%}" class="">Home
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{%url 'pizzas'%}">Pizza
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="bg-a">Deserts
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">Drinks
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="main-section">
+    <div class="container">
+        <div class="h2">
+            <h2>Наші <span class="bg-span">десерти</span></h2>
+        </div>
+        <div class="wrap-content">
+            <form method="POST" class="flex-form">
+                {% for desert in deserts %}
+                <div class="first-item">
+                    <img class="rounded" src="{{ desert.photo.url}}" width="300" height="230">
+                    <p class="mg"><span class="bg-span">Назва:</span> {{ desert.title }}</p>
+                    <p class="mg"><span class="bg-span">Маса:</span> {{ desert.mass }}</p>
+                    <p class="mg"><span class="bg-span">Ціна:</span> {{ desert.price }}</p>
+                    <button class="basket-btn " type="submit">Додати в корзину</button>
+                </div>
+                {% endfor %}
+            </form>
+
+
+        </div>
+    </div>
+    </div>
+</section>
+
 </body>
 </html>
