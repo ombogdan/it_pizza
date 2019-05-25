@@ -18,6 +18,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from menu.views import *
 from sign_up.views import *
+from cart.views import *
 
 from django.conf import settings # new
 from django.urls import path, include # new
@@ -36,6 +37,8 @@ urlpatterns = [
     path('it_pizza/pizzas/', it_pizza_pizzas, name='pizzas'),
     path('it_pizza/drinks/', it_pizza_drinks, name='drinks'),
     path('it_pizza/deserts/', it_pizza_deserts, name='deserts'),
+    path('it_pizza/create_pizza/', it_pizza_create_pizza, name='create_pizza'),
+    
 ]
 
 if settings.DEBUG:

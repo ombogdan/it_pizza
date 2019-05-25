@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Pizzas)
 admin.site.register(Drinks)
 admin.site.register(Deserts)
+admin.site.register(CreatePizzas)
