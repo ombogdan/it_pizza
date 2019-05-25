@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <tпшеitle>Home</tпшеitle>
-    <link rel="stylesheet" href="master.css">
+    <title>Home</title>
+   {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'master.css' %}"/>
 </head>
 <body>
 це домашня сторінка на якій все буде контакти про нас
+{% url 'log-out' %} це засуваєш в кнопку або ссилку коли нажимаєш воно виходе
 </body>
 </html>
