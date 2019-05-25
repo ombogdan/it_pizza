@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'menu',
     'sign_up',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,4 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATICFILES_DIRS = [('E:/Hackaton/it_pizza/static')]
 LOGIN_REDIRECT_URL = '/'
+MEDIA_URL = '/media/'

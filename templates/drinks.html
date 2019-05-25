@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drinks</title>
+</head>
+<body>
+<form method="POST">
+{% for drink in drinkss %}
+    <p>{{ drink.title }}</p>
+    <p>{{ drink.ml }}</p>
+    <p>{{ drink.price }}</p>
+    <img class="rounded" src="{{ MEDIA_URL }}{{ drink.photo }}" width="50" height="50">
+    <button type="submit">Додати в корзину</button>
+{% endfor %}
+</form>
+</body>
+</html>

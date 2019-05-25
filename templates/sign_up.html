@@ -6,7 +6,11 @@
 </head>
 <body>
 sign up
+<form method="POST">
+{% csrf_token %}
 {{ profile_form.as_p }}
 {{ user.as_p }}
+<button type="submit">зарєгаться</button>
+</form>
 </body>
 </html>

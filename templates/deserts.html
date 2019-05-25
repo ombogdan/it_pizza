@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deserts</title>
+</head>
+<body>
+<form method="POST">
+{% for desert in deserts %}
+    <p>{{ desert.title }}</p>
+    {{ desert.mass }}
+    {{ desert.price }}
+    <img class="rounded" src="{{ MEDIA_URL }}{{ desert.photo }}" width="50" height="50">
+    <button type="submit">Додати в корзину</button>
+{% endfor %}
+</form>
+</body>
+</html>

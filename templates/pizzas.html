@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pizzas</title>
 </head>
 <body>
-
+<form method="POST">
+{% for pizza in pizzas %}
+    <p>{{ pizza.title }}</p>
+    {{ pizza.description }}
+    {{ pizza.mass }}
+    {{ pizza.price }}
+    <img class="rounded" src="{{ MEDIA_URL }}{{ pizza.photo }}" width="50" height="50">
+    <button type="submit">Додати в корзину</button>
+{% endfor %}
+</form>
 </body>
 </html>
