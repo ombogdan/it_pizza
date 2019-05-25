@@ -7,7 +7,7 @@ class Pizzas(models.Model):
     description = models.TextField(max_length=500)
     price = models.DecimalField(max_digits=50, decimal_places=3, default=0.0)
     mass = models.IntegerField(default=0.0)
-    photo = models.ImageField(upload_to='pizza_images/', blank=False)
+    photo = models.ImageField(upload_to='templates/img/pizza_images/', blank=False)
 
     def __str__(self):
         return self.title
@@ -15,10 +15,9 @@ class Pizzas(models.Model):
 
 class Drinks(models.Model):
     title = models.TextField(max_length=20)
-    description = models.TextField(max_length=500)
     price = models.DecimalField(max_digits=50, decimal_places=3, default=0.0)
     ml = models.IntegerField(default=0.0)
-    photo = models.ImageField(upload_to='drinks_images/', blank=False)
+    photo = models.ImageField(upload_to='templates/img/drinks_images/', blank=False)
 
     def __str__(self):
         return self.title
@@ -28,7 +27,7 @@ class Deserts(models.Model):
     title = models.TextField(max_length=20)
     price = models.DecimalField(max_digits=50, decimal_places=3, default=0.0)
     mass = models.IntegerField(default=0.0)
-    photo = models.ImageField(upload_to='deserts_images/', blank=False)
+    photo = models.ImageField(upload_to='templates/img/deserts_images/', blank=False)
 
     def __str__(self):
         return self.title
