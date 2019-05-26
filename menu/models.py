@@ -1,26 +1,43 @@
 from django.db import models
 from sign_up.models import *
 
+
 # Create your models here.
 class Pizzas(models.Model):
     title = models.TextField(max_length=20)
     description = models.TextField(max_length=500)
     price = models.DecimalField(max_digits=50, decimal_places=3, default=0.0)
     mass = models.IntegerField(default=0.0)
-    photo = models.ImageField(upload_to='images/',default='DEFAULT VALUE', blank=False)
+    photo = models.ImageField(upload_to='images/', default='DEFAULT VALUE', blank=False)
 
     def __str__(self):
         return self.title
+
+
+class OrderPizzas(models.Model):
+    user = models.TextField(max_length=20)
+    phone_number = models.TextField(max_length=20)
+
+    def __str__(self):
+        return self.user
 
 
 class Drinks(models.Model):
     title = models.TextField(max_length=20)
     price = models.DecimalField(max_digits=50, decimal_places=2, default=0.0)
     ml = models.IntegerField(default=0.0)
-    photo = models.ImageField(upload_to='images/',default='DEFAULT VALUE', blank=False)
+    photo = models.ImageField(upload_to='images/', default='DEFAULT VALUE', blank=False)
+
+    def str(self):
+        return self.title
+
+
+class OrderDrinks(models.Model):
+    user = models.TextField(max_length=20)
+    phone_number = models.TextField(max_length=20)
 
     def __str__(self):
-        return self.title
+        return self.user
 
 
 class Deserts(models.Model):
@@ -33,8 +50,17 @@ class Deserts(models.Model):
         return self.title
 
 
+class OrderDeserts(models.Model):
+    user = models.TextField(max_length=20)
+    phone_number = models.TextField(max_length=20)
+
+    def __str__(self):
+        return self.user
+
+
 class CreatePizzas(models.Model):
     title = models.TextField(max_length=20)
+    phone_number = models.TextField(max_length=20,default=None)
     cheeze = models.BooleanField(name='Моцарелла', default=False)
     cheeze2 = models.BooleanField(name='Подвійний сир', default=False)
     meet = models.BooleanField(name='Бекон ', default=False)

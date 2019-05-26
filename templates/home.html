@@ -11,28 +11,13 @@
 </head>
 <body>
 <header class="header">
-    <div class="wrap-menu">
-        <div class="button">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-        <!-- navbar menu -->
-        <div class='menu'>
-            <nav>
-                <ul>
-                    <li class="">
-                        <img src="../static/icon/logo.png" class="logo" width="170px" height="70px"
-                             style="margin-left:35%" alt="">
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <div class="wrap-content">
         <ul class="flex-nav">
+            <li class="wrap-img-list">
+                         <img  src="../static/icon/logo.png" style="margin-right: 15vw" class="logo" width="170px" height="70px" alt="">
+                    </li>
             <li>
-                <a href="#" class="bg-a">Home
+                <a href="#" class="bg-a">Головна
                     <span></span>
                     <span></span>
                     <span></span>
@@ -40,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="{%url 'pizzas'%}">Pizza
+                <a href="{%url 'pizzas'%}">Піцца
                     <span></span>
                     <span></span>
                     <span></span>
@@ -48,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="{%url 'deserts'%}">Deserts
+                <a href="{%url 'deserts'%}">Десерти
                     <span></span>
                     <span></span>
                     <span></span>
@@ -56,7 +41,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Drinks
+                <a href="{%url 'drinks'%}">Напої
                     <span></span>
                     <span></span>
                     <span></span>

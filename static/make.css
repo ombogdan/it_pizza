@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    transition: .5s;
+    padding: 0;
+    font-family: Snell Roundhand, cursive, sans-serif;
+    color: #ffffff;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(https://images.wallpaperscraft.com/image/pizza_basil_cheese_vegetables_71025_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 1vw 1vh;
+}
+
+.flex-nav a {
+    margin-right: 3vw;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.field-title {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.vLargeTextField {
+    background: #fffee8;
+    color: #000000;
+    text-align: center;
+}
+
+.wrap-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 5vh auto;
+}
+
+
+
+.flex-ta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.checkbox-row {
+    margin-top: 2vh;
+}
+
+button {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+         box-shadow: 0 0 20px rgb(39, 211, 74);
+
+  background-color: hsl(132, 69%, 49%);
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  z-index: -1;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translateX(-525%) rotate(35deg);
+}
+
+button:hover {
+  cursor: pointer;
+        text-shadow: 0 0 5px rgb(255, 255, 255);;
+}
+
+button:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translateX(200%) rotate(35deg);
+}
+
+label {
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+label:hover {
+    margin-left: 5px;
+}
+
+.wrap-ta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrap-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-row {
+    margin-left: 4.9vw;
+}
+
+.create-btn {
+    text-align: center;
+}
+
+
+

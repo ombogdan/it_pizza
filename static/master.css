@@ -104,3 +104,8 @@ body {
     top: 20%;
     right: 5%;
 }
+
+.logo{
+    margin-right: 5vw;
+    cursor: pointer;
+}

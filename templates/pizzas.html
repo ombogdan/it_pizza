@@ -13,7 +13,7 @@
     <div class="wrap-content">
         <ul class="flex-nav">
             <li>
-                <a href="{%url 'home'%}" class="">Home
+                <a href="{% url 'home' %}" class="">Головна
                     <span></span>
                     <span></span>
                     <span></span>
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a class="bg-a" href="#">Pizza
+                <a class="bg-a" href="#">Піцца
                     <span></span>
                     <span></span>
                     <span></span>
@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li>
-                <a href="{%url 'deserts'%}">Deserts
+                <a href="{% url 'deserts' %}">Десерти
                     <span></span>
                     <span></span>
                     <span></span>
@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Drinks
+                <a href="{% url 'drinks' %}">Напої
                     <span></span>
                     <span></span>
                     <span></span>
@@ -50,34 +50,44 @@
 <section class="main-section">
     <div class="container flex-cont">
         <div class="wrap-h2">
-            <h2>Наші <span class="bg-span">піцци</span></h2>
+            <div class="wrap-new">
+                <a href="{% url 'create_pizza' %}" class="your_pizza">Створи свою 🍕</a>
+                <div class="hold-new">
+                    <img class="img-new" src="https://image.flaticon.com/icons/svg/891/891448.svg" width="40px"
+                         height="40px" alt="">
+                </div>
+            </div>
+            <div class="full">
+                <h2>Наші <span class="bg-span">піцци</span></h2>
+            </div>
         </div>
         <div class="wrap-items">
-
-
             <form method="POST" class="form-flex">
+              {% csrf_token %}
                 {% for pizza in pizzas %}
-                <div class="first-item item">
+                    <div class="first-item item">
 
-                    <div class="photobox photobox_type10">
-                        <div class="photobox__previewbox">
-                            <img src="{{ pizza.photo.url}}" width="300px" height="230px">
-                            <span class="photobox__label">
-                                    <form method="POST">
+                        <div class="photobox photobox_type10">
+                            <div class="photobox__previewbox">
+                                <img src="{{ pizza.photo.url }}" width="300px" height="230px">
+                                <span class="photobox__label">
+                                    <form >
 
                                          <p class="p-test">{{ pizza.description }} <br><p>
 
                                     </form>
 
                                     </span>
+                            </div>
                         </div>
+                        <p class="name-pizza mar"><span class="bg-span">Назва:</span> {{ pizza.title }}</p>
+                        <!--                    <p class="name-pizza mar"><span class="bg-span">Інгрідієнти:</span> {{ pizza.description }}</p>-->
+                        <p class="massa mar"><span class="bg-span">Маса :</span> {{ pizza.mass }}</p>
+                        <p class="price mar"><span class="bg-span">Ціна:</span> {{ pizza.price }}</p>
+                        <p class="qqq">Ведіть <span class="bg-span">ім'я</span> користувача:</p> {{ order.user }}
+                        <p class="qqq">Ведіть <span class="bg-span">номер</span> телефону:</p> {{ order.phone_number }}
+                        <button type="submit" class="mar basket-btn">Замовити</button>
                     </div>
-                    <p class="name-pizza mar"><span class="bg-span">Назва:</span> {{ pizza.title }}</p>
-                    <!--                    <p class="name-pizza mar"><span class="bg-span">Інгрідієнти:</span> {{ pizza.description }}</p>-->
-                    <p class="massa mar"><span class="bg-span">Маса :</span> {{ pizza.mass }}</p>
-                    <p class="price mar"><span class="bg-span">Ціна:</span> {{ pizza.price }}</p>
-                    <button type="submit" class="mar basket-btn">Додати в корзину</button>
-                </div>
                 {% endfor %}
             </form>
 

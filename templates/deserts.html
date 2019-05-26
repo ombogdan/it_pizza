@@ -13,7 +13,7 @@
     <div class="wrap-content">
         <ul class="flex-nav">
             <li>
-                <a href="{%url 'home'%}" class="">Home
+                <a href="{%url 'home'%}" class="">Головна
                     <span></span>
                     <span></span>
                     <span></span>
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a href="{%url 'pizzas'%}">Pizza
+                <a href="{%url 'pizzas'%}">Піцца
                     <span></span>
                     <span></span>
                     <span></span>
@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="bg-a">Deserts
+                <a href="#" class="bg-a">Десерти
                     <span></span>
                     <span></span>
                     <span></span>
@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Drinks
+                <a href="{%url 'drinks'%}">Напої
                     <span></span>
                     <span></span>
                     <span></span>
@@ -54,13 +54,16 @@
         </div>
         <div class="wrap-content">
             <form method="POST" class="flex-form">
+                  {% csrf_token %}
                 {% for desert in deserts %}
                 <div class="first-item">
                     <img class="rounded" src="{{ desert.photo.url}}" width="300" height="230">
                     <p class="mg"><span class="bg-span">Назва:</span> {{ desert.title }}</p>
                     <p class="mg"><span class="bg-span">Маса:</span> {{ desert.mass }}</p>
                     <p class="mg"><span class="bg-span">Ціна:</span> {{ desert.price }}</p>
-                    <button class="basket-btn " type="submit">Додати в корзину</button>
+                                            <p class="qqq">Ведіть <span class="bg-span">ім'я</span> користувача:</p> {{ order.user }}
+                        <p class="qqq">Ведіть <span class="bg-span">номер</span> телефону:</p> {{ order.phone_number }}
+                    <button class="basket-btn " type="submit">Замовити</button>
                 </div>
                 {% endfor %}
             </form>

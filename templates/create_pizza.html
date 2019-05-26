@@ -2,177 +2,157 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Зроби свою піццу</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'make.css' %}"/>
+    <link rel="stylesheet" href="{% static 'animat.css' %}"/>
+
 </head>
 <body>
-<form method="POST">
-    <div class="form-row field-title">
 
-        <div>
-            <label class="required" for="id_title">Title:</label>
-            <textarea class="vLargeTextField" cols="1" id="id_title" maxlength="3" name="title" required=""
-                      rows="2"></textarea>
-        </div>
+<header class="header container">
+    <div class="wrap-content">
+        <ul class="flex-nav">
+            <li>
+                <a href="{% url 'home' %}" class="">Головна
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a class="bg-a" href="{% url 'pizzas' %}">Піцца ➪
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'deserts' %}">Десерти
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'drinks' %}">Напої
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
     </div>
-    <div class="form-row field-Моцарелла">
+</header>
+
+<div class="container">
 
 
-        <div class="checkbox-row">
-
-
-            <input id="id_Моцарелла" name="Моцарелла" type="checkbox"><label class="vCheckboxLabel" for="id_Моцарелла">Моцарелла</label>
-
-
+    <form method="POST">
+        {% csrf_token %}
+        <div class="wrap-ta">
+            <div class="form-row field-title">
+                <label class="required" for="id_title">Ведіть ім'я користувача:</label>
+                <textarea placeholder="Ваше ім'я..." class="vLargeTextField" cols="30" id="id_title" maxlength="30"
+                          name="title" required=""
+                          rows="1"></textarea>
+            </div>
+            <div class="field-title ">
+                <label class="required" for="id_phone_number">Ведіть номер телефону:</label>
+                <textarea placeholder="Ведіть Ваш номер..." name="phone_number" cols="30" rows="1"
+                          class="vLargeTextField" maxlength="20" required=""
+                          id="id_phone_number"></textarea>
+            </div>
         </div>
-
-    </div>
-
-    <div class="form-row field-Подвійний сир">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Подвійний сир" name="Подвійний сир" type="checkbox"><label class="vCheckboxLabel"
-                                                                                     for="id_Подвійний сир">Подвійний
-            сир</label>
-
-
+        <div class="wrap-text">
+            <div class="form-row field-Моцарелла">
+                <div class="checkbox-row">
+                    <input id="id_Моцарелла" name="Моцарелла" type="checkbox"><label class="vCheckboxLabel"
+                                                                                     for="id_Моцарелла">🧀
+                    Моцарелла</label>
+                </div>
+            </div>
+            <div class="form-row field-Подвійний сир">
+                <div class="checkbox-row">
+                    <input id="id_Подвійний сир" name="Подвійний сир" type="checkbox"><label class="vCheckboxLabel"
+                                                                                             for="id_Подвійний сир">🧀🧀
+                    Подвійний
+                    сир</label>
+                </div>
+            </div>
+            <div class="form-row field-Бекон ">
+                <div class="checkbox-row">
+                    <input id="id_Бекон " name="Бекон " type="checkbox"><label class="vCheckboxLabel"
+                                                                               for="id_Бекон ">🥓 Бекон </label>
+                </div>
+            </div>
+            <div class="form-row field-Курка ">
+                <div class="checkbox-row">
+                    <input id="id_Курка " name="Курка " type="checkbox"><label class="vCheckboxLabel"
+                                                                               for="id_Курка ">🍗 Курка </label>
+                </div>
+            </div>
+            <div class="form-row field-Шинка">
+                <div class="checkbox-row">
+                    <input id="id_Шинка" name="Шинка" type="checkbox"><label class="vCheckboxLabel"
+                                                                             for="id_Шинка">🍖 Шинка</label>
+                </div>
+            </div>
+            <div class="form-row field-Зелень">
+                <div class="checkbox-row">
+                    <input id="id_Зелень" name="Зелень" type="checkbox"><label class="vCheckboxLabel"
+                                                                               for="id_Зелень">🥒 Зелень</label>
+                </div>
+            </div>
+            <div class="form-row field-Ананас">
+                <div class="checkbox-row">
+                    <input id="id_Ананас" name="Ананас" type="checkbox"><label class="vCheckboxLabel"
+                                                                               for="id_Ананас">🍍 Ананас</label>
+                </div>
+            </div>
+            <div class="form-row field-Оливки ">
+                <div class="checkbox-row">
+                    <input id="id_Оливки " name="Оливки " type="checkbox"><label class="vCheckboxLabel"
+                                                                                 for="id_Оливки ">🍈 Оливки </label>
+                </div>
+            </div>
+            <div class="form-row field-Помідори">
+                <div class="checkbox-row"></div>
+            </div>
+            <div class="form-row field-Мариновані огірки">
+                <div class="checkbox-row">
+                    <input id="id_Мариновані огірки" name="Мариновані огірки" type="checkbox"><label
+                        class="vCheckboxLabel"
+                        for="id_Мариновані огірки">🥒 огірки</label>
+                </div>
+            </div>
+            <div class="form-row field-Перець">
+                <div class="checkbox-row">
+                    <input id="id_Перець" name="Перець" type="checkbox"><label class="vCheckboxLabel"
+                                                                               for="id_Перець">🌶 Перець</label>
+                </div>
+            </div>
+            <div class="form-row field-Шампіньйони">
+                <div class="checkbox-row">
+                    <input id="id_Шампіньйони" name="Шампіньйони" type="checkbox"><label class="vCheckboxLabel"
+                                                                                         for="id_Шампіньйони">🍄
+                    Шампіньйони</label>
+                </div>
+            </div>
+            <div class="form-row field-Кукурудза">
+                <div class="checkbox-row">
+                    <input id="id_Кукурудза" name="Кукурудза" type="checkbox"><label class="vCheckboxLabel"
+                                                                                     for="id_Кукурудза">🌽
+                    Кукурудза</label>
+                </div>
+            </div>
         </div>
-
-    </div>
-
-    <div class="form-row field-Бекон ">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Бекон " name="Бекон " type="checkbox"><label class="vCheckboxLabel"
-                                                                       for="id_Бекон ">Бекон </label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Курка ">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Курка " name="Курка " type="checkbox"><label class="vCheckboxLabel"
-                                                                       for="id_Курка ">Курка </label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Шинка">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Шинка" name="Шинка" type="checkbox"><label class="vCheckboxLabel" for="id_Шинка">Шинка</label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Зелень">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Зелень" name="Зелень" type="checkbox"><label class="vCheckboxLabel"
-                                                                       for="id_Зелень">Зелень</label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Ананас">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Ананас" name="Ананас" type="checkbox"><label class="vCheckboxLabel"
-                                                                       for="id_Ананас">Ананас</label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Оливки ">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Оливки " name="Оливки " type="checkbox"><label class="vCheckboxLabel"
-                                                                         for="id_Оливки ">Оливки </label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Помідори">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Помідори" name="Помідори" type="checkbox"><label class="vCheckboxLabel" for="id_Помідори">Помідори</label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Мариновані огірки">
-
-
-        <div class="checkbox-row">
-
-
-            <input id="id_Мариновані огірки" name="Мариновані огірки" type="checkbox"><label class="vCheckboxLabel"
-                                                                                             for="id_Мариновані огірки">Мариновані
-            огірки</label>
-
-
-        </div>
-
-    </div>
-
-    <div class="form-row field-Перець">
-
-        <div class="checkbox-row">
-            <input id="id_Перець" name="Перець" type="checkbox"><label class="vCheckboxLabel"
-                                                                       for="id_Перець">Перець</label>
-        </div>
-    </div>
-    <div class="form-row field-Шампіньйони">
-        <div class="checkbox-row">
-            <input id="id_Шампіньйони" name="Шампіньйони" type="checkbox"><label class="vCheckboxLabel"
-                                                                                 for="id_Шампіньйони">Шампіньйони</label>
-        </div>
-    </div>
-    <div class="form-row field-Кукурудза">
-        <div class="checkbox-row">
-            <input id="id_Кукурудза" name="Кукурудза" type="checkbox"><label class="vCheckboxLabel" for="id_Кукурудза">Кукурудза</label>
-        </div>
-    </div>
-
-    <button type="submit">Create</button>
-</form>
+        <button type="submit" class="create-btn">Створити</button>
+    </form>
+</div>
 </body>
 </html>

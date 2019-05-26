@@ -50,7 +50,8 @@ body {
 
 .bg-span {
     background: #27d34a;
-
+    padding: 0.5vh 0.5vw;
+    color: #ffffff;
 }
 
 .h2 h2 {
@@ -69,6 +70,21 @@ body {
     justify-content: stretch;
     align-items: flex-start;
     flex-direction: column;
+}
+
+.first-item:hover {
+       box-shadow: 5px 4px 10px rgb(39, 211, 74);
+    transition: .5s;
+}
+
+textarea {
+    height: 2em;
+    width: 200px;
+    color: #000;
+}
+
+.qqq {
+    margin: 1vh 0;
 }
 
 .basket-btn {
@@ -101,3 +117,4 @@ body {
 .mg {
     margin: 1vh 0;
 }
+

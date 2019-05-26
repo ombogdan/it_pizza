@@ -50,6 +50,11 @@ body {
     flex-wrap: wrap;
 }
 
+.item:hover {
+       box-shadow: 5px 4px 10px rgb(39, 211, 74);
+    transition: .5s;
+}
+
 .item {
     display: flex;
     flex-direction: column;
@@ -64,12 +69,20 @@ body {
 
 .bg-span {
     background: #27d34a;
+    padding: 0.5vh 0.5vw;
+    color: #ffffff;
 }
 
 .wrap-h2 {
     font-size: 1.5vw;
     margin: 5vh 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.full {
+    order: 1;
 }
 
 .form-flex {
@@ -114,4 +127,45 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.your_pizza {
+    text-decoration: none;
+    color: #27d34a;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border: 3px solid #27d34a ;
+    padding: 2vh 2vw;
+
+}
+
+.wrap-new {
+    text-align: center;
+    position: relative;
+    order: 2;
+}
+
+.img-new {
+    position: absolute;
+     bottom: 70%;
+    right: 0%;
+}
+
+.your_pizza:hover {
+    background: #27d34a;
+    transition: .5s;
+    color: #ffffff;
+    border-radius: 3px;
+     box-shadow: 0 0 50px rgb(39, 211, 74);
+    text-shadow: 0 0 50px rgb(255, 255, 255);;
+}
+textarea {
+    height: 2em;
+    width: 200px;
+    color: #000;
+}
+
+.qqq {
+    margin: 1vh 0;
 }

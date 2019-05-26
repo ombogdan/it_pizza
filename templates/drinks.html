@@ -3,16 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Drinks</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'animat.css' %}"/>
+    <link rel="stylesheet" href="{% static 'desert.css' %}"/>
 </head>
 <body>
-<form method="POST">
-{% for drink in drinkss %}
-    <p>{{ drink.title }}</p>
-    <p>{{ drink.ml }}</p>
-    <p>{{ drink.price }}</p>
-    <img class="rounded" src="{{ MEDIA_URL }}{{ drink.photo }}" width="50" height="50">
-    <button type="submit">Додати в корзину</button>
-{% endfor %}
-</form>
+
+<header class="header container">
+    <div class="wrap-content">
+        <ul class="flex-nav">
+            <li>
+                <a href="{% url 'home' %}" class="">Головна
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'pizzas' %}">Піцца
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'deserts' %}">Десерти
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="bg-a">Напої
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="main-section">
+    <div class="container">
+        <div class="h2">
+            <h2>Наші <span class="bg-span">напої</span></h2>
+        </div>
+        <div class="wrap-content">
+            <form method="POST" class="flex-form">
+            {% csrf_token %}
+                {% for drink in drinkss %}
+                    <div class="first-item">
+                        <img class="rounded" src="{{ drink.photo.url }}" width="300" height="230">
+                        <p class="mg"><span class="bg-span">Назва:</span> {{ drink.title }}</p>
+                        <p class="mg"><span class="bg-span">Маса:</span> {{ drink.ml }}</p>
+                        <p class="mg"><span class="bg-span">Ціна:</span> {{ drink.price }}</p>
+                                                <p class="qqq">Ведіть <span class="bg-span">ім'я</span> користувача:</p> {{ order.user }}
+                        <p class="qqq">Ведіть <span class="bg-span">номер</span> телефону:</p> {{ order.phone_number }}
+                        <button class="basket-btn " type="submit">Замовити</button>
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</section>
 </body>
 </html>
